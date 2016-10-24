@@ -15,7 +15,7 @@ docker package dependencies:
 {%- if grains["oscodename"]|lower == 'jessie' and "version" not in docker%}
 docker package repository:
   pkgrepo.managed:
-    - name: deb http://http.debian.net/debian jessie-backports main
+    - name: {{ docker.kernel.pkgrepo.name }}
 {%- else %}
   {%- if "version" in docker %}
     {%- if (docker.version|string).startswith('1.7.') %}
