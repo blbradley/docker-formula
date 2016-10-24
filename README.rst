@@ -178,3 +178,20 @@ In this case, extra *docker run* options can be provided in your *"registry:look
 
 By default, the storage backend used by the registry is "filesystem". Use environment variables to override that, for example to use S3 as backend storage.
 
+
+Testing
+=======
+
+Testing is done with [Test Kitchen](http://kitchen.ci/)
+for machine setup and [testinfra](https://testinfra.readthedocs.io/en/latest/)
+for integration tests.
+
+Requirements
+------------
+
+* Ruby
+* Vagrant
+
+    gem install bundler
+    bundle install
+    kitchen test
